@@ -13,9 +13,7 @@ body{
 .header{
     background: linear-gradient(90deg, #274046 0%, #182848 100%); 
     opacity: .9;
-    position: fixed;
     width: 100%;
-    z-index: 1;
     height: 100px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;

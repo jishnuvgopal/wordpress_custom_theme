@@ -11,7 +11,7 @@
 </head>
 <body <?php body_class();?>>
     
-<header class="header ">
+<header class="header">
     <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name');?></a></h1>
     <h3><?php bloginfo('description');?></h3>
 </header>
