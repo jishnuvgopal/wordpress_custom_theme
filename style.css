@@ -9,6 +9,10 @@ body{
     background: -webkit-linear-gradient(to right, #274046, #E6DADA);
     background: linear-gradient(to right, #274046, #E6DADA);
     font-size: 16px;
+    
+}
+body a{
+    text-decoration: none;
 }
 .header{
     background: linear-gradient(90deg, #274046 0%, #182848 100%); 

@@ -25,10 +25,30 @@ function loadjs(){
 }
 add_action('wp_enqueue_scripts','loadjs');
 
-add_theme_support('menus');
 
 
 
+function theme_setup(){
+    // add_theme_support('title-tag');
+    add_theme_support('custom-logo');
+}
+add_action('after_setup_theme','theme_setup');
 
 
+function custom_excerpt_length(){
+return 15;
+}
+
+add_filter('excerpt_length','custom_excerpt_length');
+
+//register nav-menu
+function register_my_menu(){
+    register_nav_menus(
+        array(
+            "header-menu"=>__('Header Menu'),
+            "footer-menu"=>__('Footer Menu')
+        )
+        );
+}
+add_action("init","register_my_menu")
 ?>

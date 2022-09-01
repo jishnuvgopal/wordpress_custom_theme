@@ -10,6 +10,14 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class();?>>
+
+<nav>
+    <?php
+    if(has_nav_menu("header-menu")){
+        wp_nav_menu(array("theme_location"=>"header-menu"));
+    }
+    ?>
+</nav>
     
 <header class="header">
     <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name');?></a></h1>
