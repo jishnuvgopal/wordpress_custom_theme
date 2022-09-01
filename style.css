@@ -1,0 +1,65 @@
+/*
+Theme name:Portfolio Theme
+Author:Jishnu V Gopal
+*/
+
+body{
+    font-family: Arial, Helvetica, sans-serif; 
+    background: #E6DADA;
+    background: -webkit-linear-gradient(to right, #274046, #E6DADA);
+    background: linear-gradient(to right, #274046, #E6DADA);
+    font-size: 16px;
+}
+.header{
+    background: linear-gradient(90deg, #274046 0%, #182848 100%); 
+    opacity: .9;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: 100px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    padding-left: 10px;
+}
+.header h1 a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.header h1 a:hover{
+    color: beige;
+}
+.header h3{
+   font-size: 20px;
+   
+}
+.sitename{
+    color: azure;
+}
+
+#main{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer{
+    background: #382d2d;
+    color: white;
+    height: 60px;
+    margin: 0px auto;
+    
+    width: 100%;
+    
+}
+footer p{
+    padding: 15px 5px;
+    text-align: center;
+}
+footer a{
+    color: white;
+}
