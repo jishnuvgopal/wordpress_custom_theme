@@ -1,5 +1,10 @@
 <?php
 
+//add customizer.php file
+require_once('templates/helpers/customizer.php');
+
+
+
 function load_stylesheets(){
     wp_register_style('bootstrap',get_template_directory_uri().'/css/bootstrap.min.css',array(),false,'all');
     wp_enqueue_style('bootstrap');
@@ -7,6 +12,8 @@ function load_stylesheets(){
     wp_register_style('style',get_template_directory_uri().'/style.css',array(),false,'all');
     wp_enqueue_style('style');
 
+    wp_register_style('fontawesome',get_template_directory_uri().'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css',array(),false,'all');
+    wp_enqueue_style('fontawesome');
 }
 add_action('wp_enqueue_scripts','load_stylesheets');
 
@@ -26,14 +33,15 @@ function loadjs(){
 add_action('wp_enqueue_scripts','loadjs');
 
 
+//adding new feutures to wordpress theme
 
-
-function theme_setup(){
-    // add_theme_support('title-tag');
+function fn_theme_supports(){
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('html5',array('search-form'));
     add_theme_support('custom-logo');
 }
-add_action('after_setup_theme','theme_setup');
-
+add_action('after_setup_theme','fn_theme_supports');
 
 function custom_excerpt_length(){
 return 15;
@@ -42,13 +50,19 @@ return 15;
 add_filter('excerpt_length','custom_excerpt_length');
 
 //register nav-menu
-function register_my_menu(){
+function fn_nav_menu(){
     register_nav_menus(
         array(
-            "header-menu"=>__('Header Menu'),
-            "footer-menu"=>__('Footer Menu')
+            "primary-menu"=>__('Primary Menu','text_domain'),
+            "footer-menu"=>__('Footer Menu','text_domain')
         )
         );
 }
-add_action("init","register_my_menu")
+add_action("init","fn_nav_menu");
+
+function add_link_atts($atts){
+    $atts['class']='link text-light';
+    return $atts;
+}
+add_filter('nav_menu_link_attributes','add_link_atts')
 ?>

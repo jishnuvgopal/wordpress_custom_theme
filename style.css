@@ -12,56 +12,49 @@ body{
     
 }
 body a{
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
 }
-.header{
-    background: linear-gradient(90deg, #274046 0%, #182848 100%); 
+#navbarNav{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    
+  }
+   .navbar-nav a:hover{
+      background: #3f4c5a;
+      transition: .2s;
+      border-radius: 5px;
+  }
+  .navbar-nav li{
+    padding: 7px;
+  }
+  .header{
+    background: linear-gradient(90deg, #274046 0%, #182848 100%);
     opacity: .9;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+  #main h2{
+    position: relative;
+    text-transform: uppercase;
+    color: #3f4c5a;
+    -webkit-text-stroke:  0.3vw #143253;
+  }
+  
+  #main h2::before{
+    border-right: 2px solid #143253;
+    -webkit-text-stroke-color: 0.3vw black;
+  animation:animate 6s linear ;
+  }
+  .title{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .footer{
     width: 100%;
     height: 100px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-    padding-left: 10px;
-}
-.header h1 a{
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-size: 30px;
-}
-.header h1 a:hover{
-    color: beige;
-}
-.header h3{
-   font-size: 20px;
-   
-}
-.sitename{
-    color: azure;
-}
-
-#main{
-    display: grid;
-    grid-template-columns: 40% 60%;
-    
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-footer{
-    background: #382d2d;
-    color: white;
-    height: 60px;
-    margin: 0px auto;
-    
-    width: 100%;
-    
-}
-footer p{
-    padding: 15px 5px;
-    text-align: center;
-}
-footer a{
-    color: white;
-}
+    opacity: .8;
+    color: black;
+  }
