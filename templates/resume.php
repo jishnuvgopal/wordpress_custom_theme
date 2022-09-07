@@ -4,8 +4,8 @@
      */
     
  ?>
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/resume.css">
 <?php get_header() ; ?>
+
 <body style="font-family: Arial, Helvetica, sans-serif; background-color: #bdc3c7;">
   
 <div class="text-white " style=" background: #9eb1be;
@@ -14,12 +14,14 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3 text-left text-md-center mb-3">
-          <img class="rounded-circle img-fluid" src="marc2.jpg" alt="Profile Photo" />
+        <?php if(has_post_thumbnail()): ?>
+        <img src="<?php the_post_thumbnail_url('largest');?>" alt="" class="img-fluid">
+          <?php endif;?>
         </div>
         <div class="col-md-9">
-          <h1 class="name">Jishnu V Gopal</h1>
-          <h5><b>Web Developer</b></h5>
-          <p class="border-top pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio lacus, sollicitudin in dolor at, consequat volutpat ante. Integer quis consequat turpis, quis porta orci. Proin tincidunt volutpat faucibus. Suspendisse ac nisl purus suspendisse eleifend interdum orci non pharetra. </p>
+          <h1 class="name"><?php the_field('name'); ?></h1>
+          <h5><b><?php the_field('position'); ?></b></h5>
+          <p class="border-top pt-3"><?php the_content();?></p>
         </div>       
       </div>        
     </div>
@@ -28,13 +30,13 @@
     <div class="container">
      <div class="row p-3">
        <div class="col-md pb-2 pb-md-0">
-          <a href="#" class="text-white ml-2">jishnuvgopal4376@gmail.com</a>
+          <a href="#" class="text-white ml-2"><?php the_field('email'); ?></a>
        </div>
        <div class="col-md text-md-center pb-2 pb-md-0">
-          <a href="#" class="text-white ml-2">www.jishnuvgopal.com</a>
+          <a href="#" class="text-white ml-2"><?php the_field('website'); ?></a>
         </div>       
         <div class="col-md text-md-right">
-          <a href="#" class="text-white ml-2">+917559076805</a>
+          <a href="#" class="text-white ml-2"><?php the_field('phone'); ?></a>
         </div>       
       </div>
     </div>

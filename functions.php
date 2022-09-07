@@ -43,6 +43,13 @@ function fn_theme_supports(){
 }
 add_action('after_setup_theme','fn_theme_supports');
 
+
+add_image_size('smallest',300,300,true);
+add_image_size('largest',800,800,true);
+
+
+
+
 function custom_excerpt_length(){
 return 15;
 }
